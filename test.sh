@@ -1,4 +1,4 @@
-chloejeon$ awk -v OFS="\t" '{ if ($3 == "gene") print $1, $4 - 1, $5}' gencode.v34.annotation.gtf > all_genes.bed
+awk -v OFS="\t" '{ if ($3 == "gene") print $1, $4 - 1, $5}' gencode.v34.annotation.gtf > all_genes.bed
 open all_genes.bed
 cat gencode.v34.annotation.gtf | grep "protein_coding" > protein_coding.gtf
 awk -v OFS="\t" '{ if ($3 == "gene") print $1, $4 - 1, $5}' protein_coding.gtf > protein_coding_genes.bed
